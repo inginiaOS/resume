@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ตี๋ — Marketing Strategist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Sarabun:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- SECTION 1: HERO -->
+  <section class="hero" id="section-hero">
+    <div class="hero-tag">OPEN TO WORK</div>
+    <h1 class="hero-name">สวัสดีครับ<br/>ผม<span class="accent">ตี๋</span></h1>
+    <p class="hero-sub">Marketing Strategist ที่คิดเป็นระบบ ไม่ใช่แค่คนทำตามสั่ง</p>
+    <div class="hero-scroll">เลื่อนลงเพื่ออ่านต่อ ↓</div>
+  </section>
+
+  <!-- SECTION 2: EXPERIENCE -->
+  <section class="experience" id="section-experience">
+    <div class="container">
+      <div class="section-label">EXPERIENCE</div>
+      <h2 class="section-title">ประสบการณ์</h2>
+      <div class="exp-grid">
+        <div class="exp-item">
+          <div class="exp-year">2012 — ปัจจุบัน</div>
+          <div class="exp-role">Freelance Marketing</div>
+          <div class="exp-desc">ดูแลงานสาย Digital Marketing ตั้งแต่วางกลยุทธ์ไปจนถึง execute จริงให้กับธุรกิจ SME หลายรายตลอด 10+ ปี</div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-year">Agency 3+ ปี</div>
+          <div class="exp-role">In-house Strategist</div>
+          <div class="exp-desc">ทำงานประจำ agency ดูแลลูกค้าตั้งแต่รับ brief วาง direction ไปจนถึงดูแล paid media เอง</div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-year">Specialized</div>
+          <div class="exp-role">Facebook Paid Media</div>
+          <div class="exp-desc">ยิง paid ads และอ่าน parameter ได้ก่อนงบหมด รู้ว่า campaign ไหนควรหยุด campaign ไหนควร scale และทำไม</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: SKILLS -->
+  <section class="skills" id="section-skills">
+    <div class="container">
+      <div class="section-label">WHAT I DO</div>
+      <h2 class="section-title">สิ่งที่ทำได้จริง</h2>
+      <p class="skills-intro">กดแต่ละหัวข้อเพื่ออ่านรายละเอียดครับ</p>
+      <div class="skills-grid">
+        <button class="skill-card" onclick="openSkill('strategy')">
+          <div class="skill-num">01</div>
+          <div class="skill-name">Marketing Strategy</div>
+          <div class="skill-arrow">→</div>
+        </button>
+        <button class="skill-card" onclick="openSkill('brief')">
+          <div class="skill-num">02</div>
+          <div class="skill-name">Brief & Direction</div>
+          <div class="skill-arrow">→</div>
+        </button>
+        <button class="skill-card" onclick="openSkill('media')">
+          <div class="skill-num">03</div>
+          <div class="skill-name">Paid Media</div>
+          <div class="skill-arrow">→</div>
+        </button>
+        <button class="skill-card" onclick="openSkill('ai')">
+          <div class="skill-num">04</div>
+          <div class="skill-name">AI System Design</div>
+          <div class="skill-arrow">→</div>
+        </button>
+        <button class="skill-card" onclick="openSkill('pitch')">
+          <div class="skill-num">05</div>
+          <div class="skill-name">Pitch & Present</div>
+          <div class="skill-arrow">→</div>
+        </button>
+        <button class="skill-card" onclick="openSkill('endtoend')">
+          <div class="skill-num">06</div>
+          <div class="skill-name">End-to-End Planning</div>
+          <div class="skill-arrow">→</div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILL POPUP -->
+  <div class="popup-overlay" id="popup-overlay" onclick="closeSkill()">
+    <div class="popup-box" onclick="event.stopPropagation()">
+      <button class="popup-close" onclick="closeSkill()">✕</button>
+      <div class="popup-num" id="popup-num"></div>
+      <h3 class="popup-title" id="popup-title"></h3>
+      <p class="popup-body" id="popup-body"></p>
+    </div>
+  </div>
+
+  <!-- SECTION 4: TIME NOTIFICATION (hidden, triggers via JS) -->
+  <div class="time-notification" id="time-notification">
+    <div class="notif-dot"></div>
+    <div class="notif-content">
+      <div class="notif-title">คุณอยู่ที่นี่มา <span id="notif-time">2</span> นาทีแล้ว</div>
+      <div class="notif-body">นั่นแปลว่าคุณไม่ได้แค่เลื่อนผ่าน<br/>นี่คือส่วนหนึ่งของสิ่งที่ผมทำได้<br/><strong>อยากรู้ว่าผมออกแบบกลยุทธ์ได้ดีแค่ไหน?</strong></div>
+      <button class="notif-btn" onclick="scrollToSystem()">อ่านต่อ ↓</button>
+    </div>
+  </div>
+
+  <!-- SECTION 5: SYSTEM -->
+  <section class="system" id="section-system">
+    <div class="container">
+      <div class="section-label">WHAT COMES WITH ME</div>
+      <h2 class="section-title">ระบบที่ติดมือมาด้วย</h2>
+      <p class="system-subtitle">นี่คือส่วนที่ต่างจากคนอื่น</p>
+      <div class="system-list">
+        <div class="system-item">
+          <div class="system-check">✓</div>
+          <div class="system-text">ลูกค้าจะไม่รู้สึกว่า agency ไม่เข้าใจธุรกิจตัวเองอีกต่อไป เพราะข้อมูลทุกอย่างถูกเก็บเป็นโครงสร้างที่ทีมและ AI ดึงมาใช้ได้ทันที ไม่ต้อง brief ซ้ำทุกครั้งที่เปลี่ยนคนทำงาน</div>
+        </div>
+        <div class="system-item">
+          <div class="system-check">✓</div>
+          <div class="system-text">ทีม creative และ media ทำงานตรงทิศตั้งแต่ครั้งแรก เพราะ brief ที่ออกไปมาจากโครงสร้างที่วางไว้แล้ว งานวนน้อยลง เวลาที่เสียกับการแก้งานผิดทิศหายไป</div>
+        </div>
+        <div class="system-item">
+          <div class="system-check">✓</div>
+          <div class="system-text">AI ที่ทีมใช้อยู่ทำงานได้ตรงแบรนด์ลูกค้าจริง ไม่ generic เพราะระบบนี้ inject context ที่ถูกต้องก่อนที่ AI จะทำงานทุกครั้ง</div>
+        </div>
+        <div class="system-item">
+          <div class="system-check">✓</div>
+          <div class="system-text">freelancer หรือพนักงานใหม่เริ่มงานได้ทันทีโดยไม่ต้องรอ onboard นาน เพราะทุกอย่างอยู่ในระบบแล้ว</div>
+        </div>
+        <div class="system-item">
+          <div class="system-check">✓</div>
+          <div class="system-text">agency มีสินทรัพย์ที่จับต้องได้จากลูกค้าทุกราย ไม่ใช่แค่ man hour ที่จบแล้วหายไป ลูกค้าที่เห็นคุณค่าตรงนี้ไม่มีเหตุผลต้องเปลี่ยน agency</div>
+        </div>
+      </div>
+      <p class="system-note">ระบบนี้ผ่านการ pilot จริงแล้วและใช้งานได้ครับ ถ้ามีโอกาสได้ร่วมงาน ยินดีเอามาใช้ขยายผลในสนามจริงด้วย</p>
+    </div>
+  </section>
+
+  <!-- SECTION 6: THE REVEAL -->
+  <section class="reveal" id="section-reveal">
+    <div class="container">
+      <div class="reveal-card">
+        <div class="reveal-label">CAMPAIGN DEBRIEF</div>
+        <h2 class="reveal-title">ถ้าคุณอ่านมาถึงตรงนี้<br/>แคมเปญนี้สำเร็จครึ่งหนึ่งแล้วครับ</h2>
+        <div class="reveal-stats" id="reveal-stats">
+          <div class="stat-item">
+            <div class="stat-label">คุณมาจาก</div>
+            <div class="stat-value" id="stat-source">—</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">เวลาบนหน้านี้</div>
+            <div class="stat-value" id="stat-time">—</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Sections ที่ผ่านมา</div>
+            <div class="stat-value" id="stat-sections">—</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Skills ที่กดดู</div>
+            <div class="stat-value" id="stat-clicks">—</div>
+          </div>
+        </div>
+        <p class="reveal-body">
+          ถ้าเป็นลูกค้าจริง ผมรู้แล้วว่าคุณสนใจอะไรก่อนที่เราจะได้คุยกันด้วยซ้ำ<br/><br/>
+          คนอื่นส่ง PDF resume ให้คุณทางอีเมล<br/>
+          แต่ถ้าคุณกดปุ่มด้านล่าง ผมจะมี Line ส่วนตัวของคุณแล้ว<br/><br/>
+          <strong>นั่นคือหน้าที่ของผม — ออกแบบกลยุทธ์จนประสบความสำเร็จตามเป้าหมาย</strong>
+        </p>
+        <button class="cta-btn" id="cta-btn" onclick="openLiff()">
+          <span>คุยกับผมโดยตรง</span>
+          <span class="cta-sub">กดเพื่อเชื่อมต่อผ่าน Line</span>
+        </button>
+        <p class="reveal-footer">หลังจากนี้จะไม่มีระบบ automate แล้วครับ<br/>จะเป็นผมที่คุยกับคุณเอง</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
