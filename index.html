@@ -11,15 +11,25 @@
 </head>
 <body>
 
-  <!-- SECTION 1: HERO -->
+  <!-- HERO -->
   <section class="hero" id="section-hero">
-    <div class="hero-tag">OPEN TO WORK</div>
-    <h1 class="hero-name">สวัสดีครับ<br/>ผม<span class="accent">ตี๋</span></h1>
-    <p class="hero-sub">Marketing Strategist ที่คิดเป็นระบบ ไม่ใช่แค่คนทำตามสั่ง</p>
+    <div class="hero-inner">
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-placeholder">
+          <span>วางรูปที่นี่</span>
+        </div>
+      </div>
+      <div class="hero-text">
+        <div class="hero-tag" id="hero-greeting">OPEN TO WORK</div>
+        <h1 class="hero-name">สวัสดีครับ<br/>ผมชื่อ<span class="accent">ตี๋</span></h1>
+        <p class="hero-sub" id="hero-sub">มาสมัครงานครับ</p>
+        <p class="hero-specialist">เชี่ยวชาญการวางกลยุทธ์สื่อออนไลน์<br/>เพื่อบรรลุเป้าหมายภายใต้งบประมาณของลูกค้า</p>
+      </div>
+    </div>
     <div class="hero-scroll">เลื่อนลงเพื่ออ่านต่อ ↓</div>
   </section>
 
-  <!-- SECTION 2: EXPERIENCE -->
+  <!-- EXPERIENCE -->
   <section class="experience" id="section-experience">
     <div class="container">
       <div class="section-label">EXPERIENCE</div>
@@ -27,24 +37,52 @@
       <div class="exp-grid">
         <div class="exp-item">
           <div class="exp-year">2012 — ปัจจุบัน</div>
-          <div class="exp-role">Freelance Marketing</div>
-          <div class="exp-desc">ดูแลงานสาย Digital Marketing ตั้งแต่วางกลยุทธ์ไปจนถึง execute จริงให้กับธุรกิจ SME หลายรายตลอด 10+ ปี</div>
+          <div class="exp-content">
+            <div class="exp-role">Freelance Marketing</div>
+            <div class="exp-desc">ดูแลงานสาย Digital Marketing ตั้งแต่วางกลยุทธ์ไปจนถึง execute จริงให้กับธุรกิจ SME หลายรายตลอด 10+ ปี</div>
+          </div>
         </div>
         <div class="exp-item">
           <div class="exp-year">Agency 3+ ปี</div>
-          <div class="exp-role">In-house Strategist</div>
-          <div class="exp-desc">ทำงานประจำ agency ดูแลลูกค้าตั้งแต่รับ brief วาง direction ไปจนถึงดูแล paid media เอง</div>
+          <div class="exp-content">
+            <div class="exp-role">In-house Strategist</div>
+            <div class="exp-desc">ทำงานประจำ agency ดูแลลูกค้าตั้งแต่รับ brief วาง direction ไปจนถึงดูแล paid media เอง</div>
+          </div>
         </div>
         <div class="exp-item">
           <div class="exp-year">Specialized</div>
-          <div class="exp-role">Facebook Paid Media</div>
-          <div class="exp-desc">ยิง paid ads และอ่าน parameter ได้ก่อนงบหมด รู้ว่า campaign ไหนควรหยุด campaign ไหนควร scale และทำไม</div>
+          <div class="exp-content">
+            <div class="exp-role">Paid Media & AI Systems</div>
+            <div class="exp-desc">ยิง paid ads อ่าน parameter ได้ก่อนงบหมด และออกแบบระบบ AI ที่ลดงานซ้ำซ้อนในทีมได้จริง</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 3: SKILLS -->
+  <!-- SPECIALIST SKILLS -->
+  <section class="specialist" id="section-specialist">
+    <div class="container">
+      <div class="section-label">SPECIALIST AREA</div>
+      <h2 class="section-title">ความเชี่ยวชาญเฉพาะ</h2>
+      <div class="specialist-grid">
+        <div class="specialist-item">
+          <div class="sp-icon">◈</div>
+          <div class="sp-text">เข้าใจโครงสร้าง funnel ของ online media</div>
+        </div>
+        <div class="specialist-item">
+          <div class="sp-icon">◈</div>
+          <div class="sp-text">เข้าใจโครงสร้างการยิงโฆษณา <span class="sp-highlight">เชี่ยวชาญ Facebook เป็นพิเศษ</span></div>
+        </div>
+        <div class="specialist-item">
+          <div class="sp-icon">◈</div>
+          <div class="sp-text">เชี่ยวชาญการประยุกต์ AI กับแคมเปญการตลาดที่ลดงานซ้ำซ้อนของทีมได้</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
   <section class="skills" id="section-skills">
     <div class="container">
       <div class="section-label">WHAT I DO</div>
@@ -95,17 +133,17 @@
     </div>
   </div>
 
-  <!-- SECTION 4: TIME NOTIFICATION (hidden, triggers via JS) -->
+  <!-- TIME NOTIFICATION -->
   <div class="time-notification" id="time-notification">
     <div class="notif-dot"></div>
     <div class="notif-content">
-      <div class="notif-title">คุณอยู่ที่นี่มา <span id="notif-time">2</span> นาทีแล้ว</div>
+      <div class="notif-title">คุณอยู่ที่นี่มา <span id="notif-time">—</span> แล้ว</div>
       <div class="notif-body">นั่นแปลว่าคุณไม่ได้แค่เลื่อนผ่าน<br/>นี่คือส่วนหนึ่งของสิ่งที่ผมทำได้<br/><strong>อยากรู้ว่าผมออกแบบกลยุทธ์ได้ดีแค่ไหน?</strong></div>
       <button class="notif-btn" onclick="scrollToSystem()">อ่านต่อ ↓</button>
     </div>
   </div>
 
-  <!-- SECTION 5: SYSTEM -->
+  <!-- SYSTEM -->
   <section class="system" id="section-system">
     <div class="container">
       <div class="section-label">WHAT COMES WITH ME</div>
@@ -137,13 +175,14 @@
     </div>
   </section>
 
-  <!-- SECTION 6: THE REVEAL -->
+  <!-- REVEAL -->
   <section class="reveal" id="section-reveal">
     <div class="container">
       <div class="reveal-card">
         <div class="reveal-label">CAMPAIGN DEBRIEF</div>
         <h2 class="reveal-title">ถ้าคุณอ่านมาถึงตรงนี้<br/>แคมเปญนี้สำเร็จครึ่งหนึ่งแล้วครับ</h2>
-        <div class="reveal-stats" id="reveal-stats">
+
+        <div class="reveal-stats">
           <div class="stat-item">
             <div class="stat-label">คุณมาจาก</div>
             <div class="stat-value" id="stat-source">—</div>
@@ -153,24 +192,29 @@
             <div class="stat-value" id="stat-time">—</div>
           </div>
           <div class="stat-item">
-            <div class="stat-label">Sections ที่ผ่านมา</div>
-            <div class="stat-value" id="stat-sections">—</div>
+            <div class="stat-label">Section ที่สนใจมากที่สุด</div>
+            <div class="stat-value" id="stat-top-section">—</div>
           </div>
           <div class="stat-item">
-            <div class="stat-label">Skills ที่กดดู</div>
-            <div class="stat-value" id="stat-clicks">—</div>
+            <div class="stat-label">Device ที่ใช้</div>
+            <div class="stat-value" id="stat-device">—</div>
           </div>
         </div>
+
+        <div class="reveal-insight" id="reveal-insight"></div>
+
         <p class="reveal-body">
           ถ้าเป็นลูกค้าจริง ผมรู้แล้วว่าคุณสนใจอะไรก่อนที่เราจะได้คุยกันด้วยซ้ำ<br/><br/>
           คนอื่นส่ง PDF resume ให้คุณทางอีเมล<br/>
           แต่ถ้าคุณกดปุ่มด้านล่าง ผมจะมี Line ส่วนตัวของคุณแล้ว<br/><br/>
           <strong>นั่นคือหน้าที่ของผม — ออกแบบกลยุทธ์จนประสบความสำเร็จตามเป้าหมาย</strong>
         </p>
-        <button class="cta-btn" id="cta-btn" onclick="openLiff()">
-          <span>คุยกับผมโดยตรง</span>
-          <span class="cta-sub">กดเพื่อเชื่อมต่อผ่าน Line</span>
+
+        <button class="cta-btn" onclick="openLiff()">
+          <span>ดูผลงานที่ agency อื่นให้คุณไม่ได้</span>
+          <span class="cta-sub">เชื่อมต่อผ่าน Line — ใช้เวลา 10 วินาที</span>
         </button>
+
         <p class="reveal-footer">หลังจากนี้จะไม่มีระบบ automate แล้วครับ<br/>จะเป็นผมที่คุยกับคุณเอง</p>
       </div>
     </div>
