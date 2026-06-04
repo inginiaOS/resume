@@ -40,25 +40,34 @@ function parseUTM() {
 =========================== */
 function applyTimeGreeting() {
   const h = new Date().getHours();
-  const greetEl  = document.getElementById('hero-greeting');
-  const subEl    = document.getElementById('hero-sub');
+  let timeLabel = '';
+  let msg = '';
 
   if (h >= 5 && h < 12) {
-    greetEl.textContent = 'เช้านี้มีคนสมัครงานมาแล้วครับ';
-    subEl.textContent   = 'เพิ่งเริ่มวันทำงานเหรอครับ — ผมก็เพิ่งเริ่มเหมือนกัน';
-  } else if (h >= 12 && h < 14) {
-    greetEl.textContent = 'พักเที่ยงแวะมาดูเหรอครับ';
-    subEl.textContent   = 'ดีเลย — ผมมีเวลาไม่มากก็เหมือนกัน อ่านสั้นๆ ก็พอ';
-  } else if (h >= 14 && h < 18) {
-    greetEl.textContent = 'บ่ายแล้วยังหาคนอยู่เลย';
-    subEl.textContent   = 'แสดงว่าคนที่ใช่ยังไม่เจอ — ลองดูผมก่อนก็ได้ครับ';
-  } else if (h >= 18 && h < 22) {
-    greetEl.textContent = 'หลังเลิกงานยังมานั่งหาคนอยู่';
-    subEl.textContent   = 'แสดงว่าเรื่องนี้ไม่ใช่แค่งานปกติสำหรับคุณ';
+    const thaiHour = h <= 6 ? 'ตีหก' : `${h} โมงเช้า`;
+    timeLabel = `สวัสดีช่วง${thaiHour}ครับ`;
+    msg = `เช้าขนาดนี้แล้วยังเข้ามาดูโปรไฟล์ผม\nแสดงว่าตำแหน่งนี้ต้องสำคัญกับคุณมากแน่ๆ\nถ้าอย่างนั้นมาเริ่มกันเลยครับ`;
+  } else if (h >= 12 && h < 13) {
+    timeLabel = 'สวัสดีช่วงเที่ยงครับ';
+    msg = `พักเที่ยงแวะมาดูโปรไฟล์ผม\nเวลาน้อยก็ไม่เป็นไร ผมเขียนไว้สั้นๆ แต่ครบ\nมาเริ่มกันเลยครับ`;
+  } else if (h >= 13 && h < 18) {
+    timeLabel = `สวัสดีช่วงบ่าย ${h - 12} โมงครับ`;
+    msg = `ช่วงบ่ายยังแวะมาหาคนอยู่\nแสดงว่าคนที่ใช่ยังไม่เจอ\nลองดูผมก่อนก็ได้ครับ`;
+  } else if (h >= 18 && h < 21) {
+    timeLabel = `สวัสดีช่วง ${h - 12} โมงเย็นครับ`;
+    msg = `เลิกงานแล้วยังมาดูโปรไฟล์ผม\nแสดงว่าเรื่องนี้ไม่ใช่แค่งาน routine สำหรับคุณ\nมาเริ่มกันเลยครับ`;
   } else {
-    greetEl.textContent = 'ดึกขนาดนี้ยังหาคนอยู่';
-    subEl.textContent   = 'แสดงว่ามันเร่งด่วนจริงๆ — ผมออนไลน์ตลอดเหมือนกันครับ';
+    const display = h >= 21 ? `${h - 18} ทุ่ม` : `ตี ${h}`;
+    timeLabel = `สวัสดีช่วง${display}ครับ`;
+    msg = `ดึกขนาดนี้แล้วยังเข้ามาดูโปรไฟล์ผม\nแสดงว่าตำแหน่งนี้ต้องสำคัญกับคุณมากแน่ๆ\nถ้าอย่างนั้นมาเริ่มกันเลยครับ`;
   }
+
+  document.getElementById('greeting-time-label').textContent = timeLabel;
+  document.getElementById('greeting-msg').textContent = msg;
+}
+
+function closeGreeting() {
+  document.getElementById('greeting-overlay').classList.add('hidden');
 }
 
 /* ===========================
