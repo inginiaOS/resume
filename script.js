@@ -208,6 +208,15 @@ function closeSkill() {
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSkill(); });
 
+function unlockContent() {
+  document.getElementById('main-content').style.display = 'block';
+  document.getElementById('section-req').style.display = 'none';
+  tracker.gateUnlocked = true;
+  setTimeout(() => {
+    document.getElementById('main-content').scrollIntoView({ behavior: 'smooth' });
+  }, 100);
+}
+
 function unlockSystem() {
   document.getElementById('owner-gate').style.display = 'none';
   document.getElementById('system-content').style.display = 'block';
