@@ -282,6 +282,7 @@ section { padding: 5rem 0; border-top: 1px solid var(--border); }
   color: #fff; border: none; padding: 1.25rem 2.5rem;
   cursor: pointer; font-family: var(--font-display);
   transition: opacity 0.2s, transform 0.2s; width: 100%; margin-bottom: 1.25rem;
+  text-decoration: none;
 }
 .cta-btn:hover { opacity: 0.9; transform: translateY(-1px); }
 .cta-btn span:first-child { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.04em; }
@@ -497,4 +498,14 @@ section { padding: 5rem 0; border-top: 1px solid var(--border); }
   .tl-item { grid-template-columns: 60px 1fr; }
   .timeline::before { left: 52px; }
   .tl-item::before { left: 48px; }
+}
+
+@media (max-width: 640px) {
+  .req-section { padding: 3rem 0; }
+  .req-card { padding: 2rem 1.25rem; }
+  .req-title { font-size: clamp(1.4rem, 6vw, 2rem); }
+  .req-question { font-size: 0.95rem; }
+  .req-sub { font-size: 0.82rem; }
+  .cta-btn { padding: 1rem 1.5rem; }
+  .cta-btn span:first-child { font-size: 0.85rem; }
 }
