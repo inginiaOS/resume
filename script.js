@@ -127,17 +127,17 @@ function initSectionObserver() {
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.exp-item, .system-item, .specialist-item').forEach(el => animObs.observe(el));
+  document.querySelectorAll('.exp-item, .system-item, .specialist-item, .tl-item, .role-item').forEach(el => animObs.observe(el));
 }
 
 function getTopSection() {
   const labels = {
-    'section-hero': 'Hero',
-    'section-experience': 'ประสบการณ์',
+    'section-hero':       'Hero',
+    'section-timeline':   'Timeline',
+    'section-role':       'สิ่งที่จะทำ',
     'section-specialist': 'ความเชี่ยวชาญ',
-    'section-skills': 'Skills',
-    'section-system': 'ระบบ',
-    'section-reveal': 'Reveal',
+    'section-system':     'ระบบ',
+    'section-reveal':     'Reveal',
   };
   let top = null, maxTime = 0;
   Object.entries(tracker.sectionTime).forEach(([k, v]) => {
@@ -208,18 +208,23 @@ function closeSkill() {
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSkill(); });
 
-/* ===========================
-   REVEAL STATS + INSIGHT
-=========================== */
+function unlockSystem() {
+  document.getElementById('owner-gate').style.display = 'none';
+  document.getElementById('system-content').style.display = 'block';
+  tracker.ownerGateOpened = true;
+}
+
+
 function buildInsight() {
   const top = getTopSection();
   const insightMap = {
-    'ประสบการณ์':    'คุณหยุดอ่านที่ประสบการณ์นานที่สุด — แปลว่า track record สำคัญสำหรับคุณ',
-    'ความเชี่ยวชาญ': 'คุณสนใจความเชี่ยวชาญเฉพาะด้านมากที่สุด — ตรงกับสิ่งที่คุณกำลังมองหาใช่ไหมครับ',
-    'Skills':        'คุณกดดู skills หลายตัว — แสดงว่าคุณกำลัง evaluate อย่างจริงจัง',
-    'ระบบ':          'คุณอ่าน section ระบบนานที่สุด — นั่นแปลว่าคุณเห็นคุณค่าของ infrastructure ไม่ใช่แค่คนทำงาน',
+    'Timeline':        'คุณหยุดอ่าน timeline นานที่สุด — คุณต้องการคนที่ผ่านสนามจริงมาแล้ว ไม่ใช่แค่คนที่รู้ทฤษฎี',
+    'สิ่งที่จะทำ':     'คุณหยุดอ่านสิ่งที่ผมจะทำนานที่สุด — คุณกำลังหาคนที่ตรงกับงานที่ต้องการอยู่ใช่ไหมครับ',
+    'ความเชี่ยวชาญ':  'คุณสนใจความเชี่ยวชาญเฉพาะด้านมากที่สุด — คุณต้องการคนที่ทำได้จริง ไม่ใช่แค่วางแผน',
+    'ระบบ':            'คุณอ่าน section ระบบนานที่สุด — คุณเห็นคุณค่าของ infrastructure ไม่ใช่แค่คนทำงาน',
+    'Reveal':          'คุณอ่านมาถึงตรงนี้ — แสดงว่าคุณกำลังพิจารณาจริงๆ ไม่ใช่แค่ดูผ่านๆ',
   };
-  return insightMap[top] || `Section ที่คุณหยุดอ่านนานที่สุดคือ "${top}" — ผมจดไว้แล้วครับ`;
+  return insightMap[top] || `คุณหยุดอ่านนานที่สุดที่ "${top}" — ผมจดไว้แล้วครับ`;
 }
 
 function updateRevealStats() {
