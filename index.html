@@ -11,6 +11,37 @@
 </head>
 <body>
 
+  <!-- REQUIREMENT GATE -->
+  <section class="req-section" id="section-req">
+    <div class="container">
+      <div class="req-card">
+        <div class="section-label">OPEN TO WORK</div>
+        <h2 class="req-title">สนใจงานด้าน<br/><span class="accent">Digital Strategist<br/>+ Campaign Manager</span></h2>
+        <div class="req-list">
+          <div class="req-item">
+            <div class="req-icon">◎</div>
+            <div class="req-text">คุมทีม production และรับผิดชอบผลของ paid ads</div>
+          </div>
+          <div class="req-item">
+            <div class="req-icon">◎</div>
+            <div class="req-text">เงินเดือนที่คาดหวัง <strong>40,000 บาท/เดือน</strong></div>
+          </div>
+          <div class="req-item">
+            <div class="req-icon">◎</div>
+            <div class="req-text">ทำงานแบบ hybrid หรือ on-site ได้ทั้งหมด<br/><span class="req-muted">ถ้า on-site สนใจโซนเกษตร-นวมินทร์ บางเขน</span></div>
+          </div>
+        </div>
+        <div class="req-divider"></div>
+        <p class="req-question">โปรไฟล์เบื้องต้นตรงกับสิ่งที่คุณกำลังหาอยู่ไหมครับ?</p>
+        <p class="req-sub">เว็บนี้ผมเขียนขึ้นมาเองด้วย AI และออกแบบ experience funnel ทั้งหมดตั้งแต่ต้น ไม่ใช่ template ถ้าโอเค สามารถดูสิ่งที่เกี่ยวกับผมได้ต่อเลยครับ</p>
+        <button class="req-btn" onclick="unlockContent()">ตรงกัน ดูต่อได้เลย →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT (hidden until gate passed) -->
+  <div id="main-content" style="display:none;">
+
   <!-- HERO -->
   <section class="hero" id="section-hero">
     <div class="hero-inner">
@@ -235,6 +266,8 @@
       </div>
     </div>
   </section>
+
+  </div><!-- end main-content -->
 
   <!-- TIME GREETING POPUP -->
   <div class="greeting-overlay" id="greeting-overlay">
