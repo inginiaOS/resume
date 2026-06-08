@@ -142,7 +142,7 @@ function getTopSection() {
     'section-hero':       'หน้าแรก',
     'section-req':        'เงื่อนไขงานที่สนใจ',
     'section-timeline':   'ประวัติการทำงาน',
-    'section-role':       'สิ่งที่จะทำในบริษัทคุณ',
+    'section-exec':       'ว่าทำไมถึงคุ้มค่า',
     'section-specialist': 'ความเชี่ยวชาญ',
     'section-reveal':     'หน้าสรุป',
   };
@@ -224,6 +224,13 @@ function unlockContent() {
   }, 100);
 }
 
+function toggleExec(btn) {
+  const item = btn.closest('.exec-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.exec-item').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
 function unlockSystem() {
   document.getElementById('owner-gate').style.display = 'none';
   document.getElementById('system-content').style.display = 'block';
@@ -236,7 +243,7 @@ function buildInsight() {
   const insightMap = {
     'เงื่อนไขงานที่สนใจ':        'คุณหยุดอ่านเงื่อนไขงานนานที่สุด — แปลว่าตำแหน่งและโซนที่ผมระบุไว้ตรงกับที่คุณกำลังมองหา',
     'ประวัติการทำงาน':            'คุณหยุดอ่านประวัติการทำงานนานที่สุด — คุณต้องการคนที่ผ่านสนามจริงมาแล้ว ไม่ใช่แค่รู้ทฤษฎี',
-    'สิ่งที่จะทำในบริษัทคุณ':     'คุณหยุดอ่านส่วนนี้นานที่สุด — งานที่ผมระบุตรงกับ scope ที่คุณต้องการอยู่ใช่ไหมครับ',
+    'ว่าทำไมถึงคุ้มค่า':          'คุณหยุดอ่าน executive pitch นานที่สุด — คุณกำลังประเมิน ROI ของการจ้างผมอยู่ใช่ไหมครับ',
     'ความเชี่ยวชาญ':              'คุณหยุดอ่านความเชี่ยวชาญนานที่สุด — คุณกำลังประเมินว่า skill ของผมตรงกับปัญหาที่บริษัทคุณมีอยู่หรือเปล่า',
     'หน้าสรุป':                   'คุณอ่านมาถึงตรงนี้ — แสดงว่าคุณกำลังพิจารณาจริงๆ ไม่ใช่แค่ดูผ่านๆ',
   };
